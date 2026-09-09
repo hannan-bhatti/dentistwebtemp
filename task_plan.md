@@ -31,8 +31,8 @@
 - [x] Add smooth scroll animations.
 - [x] Refine UX and seek user feedback.
 
-## Phase 5: Trigger
-- [ ] Finalize local testing (localhost).
-- [ ] Push repository to GitHub.
-- [ ] Deploy to Vercel.
-- [ ] Finalize Maintenance Log in `gemini.md`.
+## Phase 5: Trigger [DONE]
+- [x] Finalize local testing (localhost).
+- [x] Push repository to GitHub.
+- [x] Deploy to Vercel (Done via Vercel GitHub integration).
+- [x] Finalize Maintenance Log in `gemini.md`.

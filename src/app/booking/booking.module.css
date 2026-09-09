@@ -1,41 +1,99 @@
-.portalContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  padding: 4rem 0;
+.bookingHero {
+  background: radial-gradient(100% 70% at 50% 0%, rgba(14, 116, 144, 0.08) 0%, rgba(251, 252, 253, 0) 100%);
+  padding: 5rem 0 3rem;
+  text-align: center;
 }
 
-@media (max-width: 768px) {
+.portalContainer {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.stepBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 650px;
+  margin: 2rem auto 0;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.stepNum {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.bookingCard, .intakeCard {
+  background: var(--surface-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2rem;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.iconBox {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.cardDesc {
+  color: var(--text-muted);
+  font-size: 0.925rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.embedContainer {
+  background-color: var(--bg-subtle);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  min-height: 520px;
+}
+
+@media (max-width: 960px) {
   .portalContainer {
     grid-template-columns: 1fr;
   }
-}
-
-.bookingSection, .intakeSection {
-  background: white;
-  border: 1px solid var(--border-color);
-  border-radius: 1.5rem;
-  padding: 3rem;
-  box-shadow: var(--shadow-sm);
-}
-
-.portalTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--primary-dark);
-}
-
-.portalDesc {
-  color: var(--text-muted);
-  margin-bottom: 2rem;
-}
-
-.mockEmbed {
-  background-color: var(--bg-secondary);
-  border: 2px dashed var(--border-color);
-  border-radius: 1rem;
-  padding: 4rem 2rem;
-  text-align: center;
-  color: var(--text-muted);
+  .stepBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
 }
