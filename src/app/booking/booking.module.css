@@ -438,3 +438,45 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 640px) {
+  .bookingHero {
+    padding: 3rem 0 1.5rem;
+  }
+  .bookingCard, .intakeCard {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+  .dateStrip {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .datePill {
+    flex: 0 0 68px;
+    padding: 0.75rem 0.25rem;
+    scroll-snap-align: start;
+  }
+  .slotGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .slotBtn {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  .customSelect, .formInput, .formTextarea {
+    font-size: 16px !important;
+    padding: 0.85rem 1rem;
+  }
+  .confirmDetailRow {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}

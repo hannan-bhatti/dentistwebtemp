@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { LuminaLogo } from '@/components/LuminaLogo';
+import { MobileNavigation } from '@/components/MobileNavigation';
 import { Phone, Calendar, Clock, MapPin, ArrowRight, Sparkles, MessageCircle, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 
@@ -57,6 +58,9 @@ export default function RootLayout({
                 <span>Book Visit</span>
               </Link>
             </div>
+
+            {/* Mobile Navigation Drawer & Quick Actions */}
+            <MobileNavigation />
           </div>
         </header>
 

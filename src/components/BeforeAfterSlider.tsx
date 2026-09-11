@@ -65,6 +65,7 @@ export function BeforeAfterSlider({
           setIsDragging(true);
           handleMove(e.clientX);
         }}
+        onTouchStart={handleTouchMove}
         onTouchMove={handleTouchMove}
         role="slider"
         aria-valuenow={Math.round(sliderPosition)}

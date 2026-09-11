@@ -416,7 +416,8 @@ button {
 }
 
 @media (max-width: 1040px) {
-  .nav-links {
+  .nav-links,
+  .nav-actions {
     display: none;
   }
 }
@@ -428,5 +429,66 @@ button {
   }
   .section-title {
     font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4.25rem 0;
+  }
+  .section-header {
+    margin-bottom: 2.75rem;
+  }
+  .section-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+  .top-banner {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  .header-inner {
+    padding: 0.75rem 0;
+  }
+  .btn-primary, .btn-secondary {
+    padding: 0.85rem 1.4rem;
+    font-size: 0.925rem;
+  }
+  /* Prevent iOS automatic zoom on form input focus */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .section-title {
+    font-size: 1.75rem;
+  }
+  .logo-brand-name {
+    font-size: 1.2rem;
+  }
+  .logo-brand-sub {
+    font-size: 0.6rem;
   }
 }

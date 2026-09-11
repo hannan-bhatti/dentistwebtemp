@@ -833,20 +833,102 @@
 }
 
 @media (max-width: 640px) {
+  .hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
   .heroHeadline {
-    font-size: 2.35rem;
+    font-size: clamp(2rem, 7.5vw, 2.45rem);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+  .heroSubheadline {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+  .heroActions a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .heroImageFrame {
+    border-radius: 1.5rem;
+    box-shadow: 0 15px 35px -8px rgba(14, 116, 144, 0.2);
   }
   .heroMainImg {
-    height: 340px;
+    height: 280px;
   }
   .floatingCardTop, .floatingCardBottom {
-    position: static;
-    margin-top: 1rem;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin-top: 0.85rem;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px -4px rgba(14, 116, 144, 0.12);
   }
-  .vipCtaTitle {
-    font-size: 2.2rem;
+  .bookingBarWrapper {
+    margin-top: 1.5rem;
+  }
+  .bookingBar {
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+  }
+  .fieldSelect {
+    font-size: 16px;
+    padding: 0.35rem 0;
+  }
+  .bookingBtn {
+    padding: 0.95rem 1.25rem !important;
+    font-size: 0.95rem !important;
+    min-height: 50px;
+  }
+  .transformationBox {
+    border-radius: 1.5rem;
+  }
+  .transformationDetails {
+    padding: 1.5rem;
+  }
+  .treatmentMetaGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+  .experienceGrid {
+    grid-template-columns: 1fr;
   }
   .vipCtaBanner {
-    padding: 3.5rem 1.5rem;
+    padding: 3rem 1.25rem;
+    border-radius: 1.5rem;
+  }
+  .vipCtaTitle {
+    font-size: 1.85rem;
+    line-height: 1.2;
+  }
+  .vipCtaSub {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .vipCtaActions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.85rem;
+  }
+  .vipBtnPrimary, .vipBtnSecondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.95rem 1.25rem;
+    font-size: 0.95rem;
   }
 }
