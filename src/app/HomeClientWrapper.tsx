@@ -366,7 +366,10 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
             </div>
 
             <div className={styles.transformationDetails}>
-              <span className={styles.pillBadge}>Cosmetic Case Study</span>
+              <span className={styles.pillBadge}>
+                <Sparkles size={13} color="var(--primary)" />
+                Cosmetic Case Study
+              </span>
               <h3 style={{ fontSize: '1.85rem', marginBottom: '0.75rem', lineHeight: 1.25 }}>
                 Full Arch Porcelain Veneer Restoration
               </h3>

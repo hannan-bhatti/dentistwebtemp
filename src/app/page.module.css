@@ -354,16 +354,20 @@
 }
 
 .pillBadge {
-  display: inline-block;
-  background: var(--accent-gold-light);
-  color: var(--accent-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border: 1px solid rgba(14, 116, 144, 0.22);
   font-weight: 700;
   font-size: 0.75rem;
   text-transform: uppercase;
-  padding: 0.35rem 0.85rem;
+  padding: 0.4rem 0.95rem;
   border-radius: 9999px;
   margin-bottom: 1.25rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
+  box-shadow: 0 2px 8px rgba(14, 116, 144, 0.08);
 }
 
 .treatmentMetaGrid {
