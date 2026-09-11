@@ -1,0 +1,162 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  overflow: hidden;
+  user-select: none;
+  cursor: ew-resize;
+  background: #091e28;
+}
+
+.imageLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 
+  Since the source image is a side-by-side composite:
+  - Left half (0% to 50%) is the Before smile
+  - Right half (50% to 100%) is the After smile
+  We crop and expand each half to fill 100% of the comparison box!
+*/
+.imageCropperLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+}
+
+.imgLeft {
+  object-fit: cover;
+  object-position: left center;
+}
+
+.imageCropperRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200%;
+  height: 100%;
+}
+
+.imgRight {
+  object-fit: cover;
+  object-position: right center;
+}
+
+/* Badges */
+.badgeBefore, .badgeAfter {
+  position: absolute;
+  top: 1.25rem;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  backdrop-filter: blur(12px);
+  pointer-events: none;
+  z-index: 5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.badgeBefore {
+  left: 1.25rem;
+  background: rgba(15, 23, 42, 0.75);
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.badgeAfter {
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: #083344;
+  border: 1px solid rgba(14, 116, 144, 0.3);
+}
+
+/* Divider line & handle */
+.divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #38bdf8 0%, #ffffff 50%, #0e7490 100%);
+  transform: translateX(-50%);
+  z-index: 10;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+  pointer-events: none;
+}
+
+.handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #0e7490;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3), 0 0 0 4px rgba(56, 189, 248, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  pointer-events: auto;
+}
+
+.handle:active {
+  cursor: grabbing;
+}
+
+.dragHint {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(8, 51, 68, 0.85);
+  color: #ffffff;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 320px;
+    border-radius: 1.5rem;
+  }
+  .handle {
+    width: 38px;
+    height: 38px;
+  }
+  .badgeBefore, .badgeAfter {
+    font-size: 0.675rem;
+    padding: 0.35rem 0.75rem;
+    top: 0.85rem;
+  }
+  .badgeBefore { left: 0.85rem; }
+  .badgeAfter { right: 0.85rem; }
+}

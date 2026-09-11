@@ -181,14 +181,15 @@
   border-radius: 1.5rem;
   box-shadow: 0 20px 40px -10px rgba(14, 116, 144, 0.12);
   border: 1px solid var(--border-subtle);
-  padding: 1.5rem 2rem;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr auto;
-  gap: 1.5rem;
+  padding: 1.25rem 2rem;
+  display: flex;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .bookingField {
+  flex: 1 1 0;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -209,6 +210,7 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  white-space: nowrap;
 }
 
 .fieldSelect {
@@ -220,6 +222,36 @@
   background: transparent;
   outline: none;
   cursor: pointer;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bookingBarAction {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.bookingBtn {
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.65rem !important;
+  padding: 0.95rem 1.85rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 10px 25px -4px rgba(14, 116, 144, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  flex-shrink: 0 !important;
+}
+
+.bookingBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -4px rgba(14, 116, 144, 0.5) !important;
 }
 
 /* Before & After Smile Gallery */
@@ -711,13 +743,27 @@
     font-size: 3rem;
   }
   .bookingBar {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
     gap: 1.25rem;
+    padding: 1.5rem;
   }
   .bookingField {
     border-right: none;
     border-bottom: 1px solid var(--border-subtle);
+    padding-right: 0;
     padding-bottom: 1rem;
+  }
+  .bookingField:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .bookingBarAction {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .bookingBtn {
+    width: 100% !important;
   }
   .transformationBox {
     grid-template-columns: 1fr;

@@ -1,0 +1,118 @@
+.tickerBar {
+  background: #061922;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+  color: #e0f2fe;
+  font-size: 0.825rem;
+  padding: 0.45rem 0;
+  position: relative;
+  z-index: 90;
+}
+
+.tickerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.statusLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.radarWrapper {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radarPing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #10b981;
+  opacity: 0.75;
+  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.radarDot {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.studioStatus strong {
+  color: #38bdf8;
+}
+
+.divider {
+  color: #475569;
+}
+
+.waitTimeBadge {
+  color: #a7f3d0;
+  font-weight: 600;
+}
+
+.liveClock {
+  color: #94a3b8;
+  font-size: 0.775rem;
+}
+
+.statusRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.slotNote {
+  color: #cbd5e1;
+  font-size: 0.8rem;
+}
+
+.slotNote strong {
+  color: #ffffff;
+}
+
+.priorityLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(14, 116, 144, 0.35);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.priorityLink:hover {
+  background: #0e7490;
+  border-color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
+
+@media (max-width: 900px) {
+  .statusRight {
+    display: none;
+  }
+}

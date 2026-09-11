@@ -1,0 +1,391 @@
+.sectionWrapper {
+  padding: 6rem 0;
+  background: radial-gradient(100% 80% at 50% 0%, rgba(14, 116, 144, 0.05) 0%, rgba(251, 252, 253, 0) 100%);
+  position: relative;
+}
+
+.headerBox {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.calculatorCard {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 2.5rem;
+  background: var(--surface-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2.5rem;
+  padding: 3rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.configColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.fieldSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.fieldLabel {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-heading);
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.countPreview {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(14, 116, 144, 0.2);
+}
+
+.treatmentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.treatmentPill {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.15rem;
+  border-radius: 16px;
+  border: 1.5px solid var(--border-subtle);
+  background: var(--bg-subtle);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  font-family: inherit;
+}
+
+.treatmentPill:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.treatmentPillActive {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(14, 116, 144, 0.15);
+  border-width: 2px;
+}
+
+.pillTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 0.25rem;
+}
+
+.treatmentPillActive .pillTitle {
+  color: var(--primary);
+}
+
+.pillSub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.countGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.countButton {
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  border: 1.5px solid var(--border-subtle);
+  background: var(--bg-subtle);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.countButton:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.countButtonActive {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(14, 116, 144, 0.25);
+}
+
+.countBtnTitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 0.2rem;
+}
+
+.countButtonActive .countBtnTitle {
+  color: #ffffff;
+}
+
+.countBtnDesc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.countButtonActive .countBtnDesc {
+  color: #cbe7f0;
+}
+
+.addonList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.addonItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.95rem 1.15rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-subtle);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addonItem:hover {
+  background: #ffffff;
+  border-color: rgba(14, 116, 144, 0.3);
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  margin-top: 0.2rem;
+  cursor: pointer;
+}
+
+.addonTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.addonDesc {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+/* Right Summary Column */
+.summaryColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryBox {
+  background: linear-gradient(145deg, #092837 0%, #071922 100%);
+  border-radius: 2rem;
+  padding: 2.5rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: sticky;
+  top: 6.5rem;
+  box-shadow: 0 20px 40px -10px rgba(7, 25, 34, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.summaryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: #38bdf8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: fit-content;
+}
+
+.totalBlock {
+  margin-top: 0.5rem;
+}
+
+.totalLabel {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.totalAmount {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0.35rem 0;
+  line-height: 1.1;
+}
+
+.totalSub {
+  font-size: 0.8rem;
+  color: #7dd3fc;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0.25rem 0;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.infoKey {
+  color: #94a3b8;
+}
+
+.infoVal {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.emiCard {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 14px;
+  padding: 1rem 1.15rem;
+}
+
+.emiHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.825rem;
+  color: #38bdf8;
+  margin-bottom: 0.35rem;
+}
+
+.emiAmount {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.emiBanks {
+  font-size: 0.725rem;
+  color: #94a3b8;
+  margin-top: 0.2rem;
+}
+
+.actionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.whatsappBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: #25d366;
+  color: #ffffff;
+  font-size: 0.925rem;
+  font-weight: 700;
+  padding: 0.9rem 1.25rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+
+.whatsappBtn:hover {
+  transform: translateY(-2px);
+  background: #20ba5a;
+}
+
+.bookBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: #083344;
+  font-size: 0.925rem;
+  font-weight: 700;
+  padding: 0.9rem 1.25rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.bookBtn:hover {
+  background: #f0fdfa;
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.assuranceNote {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.725rem;
+  color: #94a3b8;
+  line-height: 1.4;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 1024px) {
+  .calculatorCard {
+    grid-template-columns: 1fr;
+  }
+  .summaryBox {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .treatmentGrid, .countGrid {
+    grid-template-columns: 1fr;
+  }
+  .calculatorCard {
+    padding: 1.75rem;
+    border-radius: 1.75rem;
+  }
+  .totalAmount {
+    font-size: 2.2rem;
+  }
+}

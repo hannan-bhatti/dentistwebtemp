@@ -27,6 +27,10 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { amenitiesData, techData, faqData, transformationData } from '@/lib/mockData';
+import { BeforeAfterSlider } from '@/components/BeforeAfterSlider';
+import { SmileCalculator } from '@/components/SmileCalculator';
+import { ComfortSanctuaryQuiz } from '@/components/ComfortSanctuaryQuiz';
+import { TiltCard } from '@/components/TiltCard';
 
 const iconServiceMap: Record<string, React.ReactNode> = {
   'cosmetic-veneers': <Smile size={28} />,
@@ -205,14 +209,14 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
               </select>
             </div>
 
-            <div>
+            <div className={styles.bookingBarAction}>
               <Link 
                 href={`/booking?service=${selectedService}&doctor=${selectedDoctor}&time=${selectedTime}`}
-                className="btn-primary"
-                style={{ width: '100%', padding: '0.95rem 1.75rem' }}
+                className={`btn-primary ${styles.bookingBtn}`}
               >
-                <Calendar size={17} />
+                <Calendar size={18} style={{ flexShrink: 0 }} />
                 <span>Check Live Calendar</span>
+                <ArrowRight size={16} style={{ flexShrink: 0 }} />
               </Link>
             </div>
           </motion.div>
@@ -237,12 +241,10 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
             viewport={{ once: true }}
           >
             <div className={styles.transformationImageWrap}>
-              <Image 
-                src={transformationData.image}
-                alt="Before and after porcelain veneers smile makeover"
-                width={700}
-                height={450}
-                className={styles.transformationImg}
+              <BeforeAfterSlider 
+                imageSrc={transformationData.image || "/images/smile-transformation.jpg"}
+                beforeLabel="Before: Wear & Fluorosis"
+                afterLabel="After: Swiss Porcelain Artistry"
               />
             </div>
 
@@ -336,6 +338,9 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
                 </div>
               ))}
             </div>
+
+            {/* Interactive Calm & Comfort Sanctuary Quiz */}
+            <ComfortSanctuaryQuiz />
           </div>
         </div>
       </section>
@@ -353,35 +358,37 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
 
           <div className={styles.servicesGrid}>
             {servicesData.map((service: any, i: number) => (
-              <motion.div 
-                key={service.id} 
-                className={styles.serviceCard}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <span className={styles.serviceCategoryBadge}>{service.category}</span>
-                <div className={styles.serviceIconWrap}>
-                  {iconServiceMap[service.id] || <Smile size={28} />}
-                </div>
-                <h3 className={styles.serviceTitle}>{service.title}</h3>
-                <p className={styles.serviceDescription}>{service.shortDescription}</p>
-
-                <div className={styles.serviceFooter}>
-                  <div className={styles.servicePrice}>
-                    <span className="priceLabel">Starting From</span>
-                    <span className="priceValue">{service.priceFrom || "$250"}</span>
+              <TiltCard key={service.id} maxTilt={6} scale={1.02}>
+                <motion.div 
+                  className={styles.serviceCard}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  style={{ height: '100%' }}
+                >
+                  <span className={styles.serviceCategoryBadge}>{service.category}</span>
+                  <div className={styles.serviceIconWrap}>
+                    {iconServiceMap[service.id] || <Smile size={28} />}
                   </div>
-                  <Link 
-                    href={`/booking?service=${service.id}`} 
-                    className="btn-primary"
-                    style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
-                  >
-                    Book Now
-                  </Link>
-                </div>
-              </motion.div>
+                  <h3 className={styles.serviceTitle}>{service.title}</h3>
+                  <p className={styles.serviceDescription}>{service.shortDescription}</p>
+
+                  <div className={styles.serviceFooter}>
+                    <div className={styles.servicePrice}>
+                      <span className="priceLabel">Starting From</span>
+                      <span className="priceValue">{service.priceFrom || "Rs. 25,000"}</span>
+                    </div>
+                    <Link 
+                      href={`/booking?service=${service.id}`} 
+                      className="btn-primary"
+                      style={{ padding: '0.65rem 1.25rem', fontSize: '0.85rem' }}
+                    >
+                      Book Now
+                    </Link>
+                  </div>
+                </motion.div>
+              </TiltCard>
             ))}
           </div>
 
@@ -393,6 +400,9 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
           </div>
         </div>
       </section>
+
+      {/* Interactive Smile Makeover & Cost Calculator */}
+      <SmileCalculator />
 
       {/* 6. SPECIALISTS */}
       <section id="specialists" className="section">
@@ -407,39 +417,41 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
 
           <div className={styles.doctorsGrid}>
             {doctorsData.map((doctor: any, i: number) => (
-              <motion.div 
-                key={doctor.id} 
-                className={styles.doctorCard}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-              >
-                <div className={styles.doctorImageWrap}>
-                  <Image 
-                    src={doctor.imageUrl} 
-                    alt={doctor.name} 
-                    width={400} 
-                    height={320} 
-                    className={styles.doctorImg} 
-                  />
-                </div>
-                <div className={styles.doctorBody}>
-                  <div className={styles.doctorRole}>{doctor.role || doctor.specialty}</div>
-                  <h3 className={styles.doctorName}>{doctor.name}</h3>
-                  <div className={styles.doctorEdu}>{doctor.education}</div>
-                  <p className={styles.doctorBio}>{doctor.bio}</p>
-                  
-                  <Link 
-                    href={`/booking?doctor=${doctor.id}`} 
-                    className="btn-primary"
-                    style={{ width: '100%', padding: '0.75rem 1rem', fontSize: '0.9rem' }}
-                  >
-                    <Calendar size={15} />
-                    <span>Consult with {doctor.name.split(',')[0]}</span>
-                  </Link>
-                </div>
-              </motion.div>
+              <TiltCard key={doctor.id} maxTilt={7} scale={1.02}>
+                <motion.div 
+                  className={styles.doctorCard}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  style={{ height: '100%' }}
+                >
+                  <div className={styles.doctorImageWrap}>
+                    <Image 
+                      src={doctor.imageUrl} 
+                      alt={doctor.name} 
+                      width={400} 
+                      height={320} 
+                      className={styles.doctorImg} 
+                    />
+                  </div>
+                  <div className={styles.doctorBody}>
+                    <div className={styles.doctorRole}>{doctor.role || doctor.specialty}</div>
+                    <h3 className={styles.doctorName}>{doctor.name}</h3>
+                    <div className={styles.doctorEdu}>{doctor.education}</div>
+                    <p className={styles.doctorBio}>{doctor.bio}</p>
+                    
+                    <Link 
+                      href={`/booking?doctor=${doctor.id}`} 
+                      className="btn-primary"
+                      style={{ width: '100%', padding: '0.75rem 1rem', fontSize: '0.9rem' }}
+                    >
+                      <Calendar size={15} />
+                      <span>Consult with {doctor.name.split(',')[0]}</span>
+                    </Link>
+                  </div>
+                </motion.div>
+              </TiltCard>
             ))}
           </div>
         </div>
