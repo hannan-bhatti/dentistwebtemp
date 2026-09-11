@@ -117,7 +117,7 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
                 </div>
                 <div>
                   <div className={styles.floatingCardTitle}>Next Opening Today</div>
-                  <div className={styles.floatingCardSub}>2:30 PM • Dr. Elena Smith</div>
+                  <div className={styles.floatingCardSub}>2:30 PM • Dr. Ayesha Siddiqui</div>
                 </div>
               </div>
 
@@ -252,7 +252,7 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
                 Full Arch Porcelain Veneer Restoration
               </h3>
               <p style={{ color: 'var(--text-muted)', lineHeight: '1.7', fontSize: '0.975rem' }}>
-                Patient presented with enamel erosion, uneven incisal edges, and severe tetracycline discoloration. Dr. Elena designed 8 ultra-thin feldspathic porcelain veneers to recreate natural translucency.
+                Patient presented with enamel erosion, uneven incisal edges, and severe fluorosis discoloration. Dr. Ayesha designed 8 ultra-thin Swiss ceramic veneers to recreate natural translucency and golden-ratio symmetry.
               </p>
 
               <div className={styles.treatmentMetaGrid}>
@@ -478,7 +478,7 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
                 <div className={styles.reviewPatientMeta}>
                   <div>
                     <div className={styles.patientName}>{review.author}</div>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{review.location || "Miami Beach, FL"}</div>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{review.location || "Clifton, Karachi"}</div>
                   </div>
                   <div className={styles.patientTreatment}>{review.treatment || "Verified Visit"}</div>
                 </div>
