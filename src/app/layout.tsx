@@ -25,9 +25,9 @@ export default function RootLayout({
             <span><strong>Accepting New Patients:</strong> Priority Emergency Consultations Across Karachi & Lahore</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-            <span>Concierge: <strong>+92 (21) 3587-4621</strong></span>
+            <span>Patient Desk: <strong>+92 (21) 3587-4621</strong></span>
             <a href="https://wa.me/923005864621" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-              <MessageCircle size={14} /> WhatsApp Concierge
+              <MessageCircle size={14} /> WhatsApp Care Desk
             </a>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function RootLayout({
               </div>
 
               <div className="footer-col">
-                <h4>Studio Hours & Concierge</h4>
+                <h4>Studio Hours &amp; Patient Care</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem' }}>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
                     <MapPin size={18} color="#38bdf8" style={{ marginTop: '0.2rem', flexShrink: 0 }} />

@@ -253,7 +253,7 @@ export function SmileCalculator() {
                   className={styles.whatsappBtn}
                 >
                   <MessageCircle size={18} />
-                  <span>Send Estimate to WhatsApp Concierge</span>
+                  <span>Send Estimate to WhatsApp Care Desk</span>
                 </a>
 
                 <a href="/booking" className={styles.bookBtn}>

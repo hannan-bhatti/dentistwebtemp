@@ -34,7 +34,7 @@ export function LiveLoungeTicker() {
               <span className={styles.radarDot} />
             </span>
             <span className={styles.studioStatus}>
-              <strong>Clifton Studio:</strong> Live Concierge Active
+              <strong>Clifton Studio:</strong> Patient Care Desk Active
             </span>
             <span className={styles.divider}>•</span>
             <span className={styles.waitTimeBadge}>

@@ -24,14 +24,14 @@ export function FloatingConcierge() {
               <div className={styles.avatarGroup}>
                 <div className={styles.statusDot}></div>
                 <div>
-                  <div className={styles.cardTitle}>VIP Clinical Concierge</div>
+                  <div className={styles.cardTitle}>VIP Patient Care Desk</div>
                   <div className={styles.cardSubtitle}>Clifton, Karachi &amp; Gulberg, Lahore</div>
                 </div>
               </div>
               <button 
                 onClick={() => setIsOpen(false)}
                 className={styles.closeBtn}
-                aria-label="Close concierge"
+                aria-label="Close care desk"
               >
                 <X size={16} />
               </button>
@@ -39,7 +39,7 @@ export function FloatingConcierge() {
 
             <div className={styles.cardBody}>
               <p className={styles.cardIntro}>
-                Welcome to Lumina Dental Studio. How may our concierge team assist your smile today?
+                Welcome to Lumina Dental Studio. How may our patient care team assist your smile today?
               </p>
 
               <div className={styles.actionList}>
@@ -94,11 +94,11 @@ export function FloatingConcierge() {
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        aria-label="Toggle VIP Concierge"
+        aria-label="Toggle Patient Care Desk"
       >
         <div className={styles.triggerPulse}></div>
         {isOpen ? <X size={20} /> : <MessageCircle size={22} />}
-        <span className={styles.triggerLabel}>Concierge</span>
+        <span className={styles.triggerLabel}>Patient Care</span>
       </motion.button>
     </div>
   );

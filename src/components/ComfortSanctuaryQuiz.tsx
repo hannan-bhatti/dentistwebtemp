@@ -253,7 +253,7 @@ export function ComfortSanctuaryQuiz() {
                 className={styles.whatsappAction}
               >
                 <MessageCircle size={16} />
-                <span>Send Passport to WhatsApp Concierge</span>
+                <span>Send Passport to WhatsApp Care Desk</span>
               </a>
 
               <button 

@@ -153,7 +153,7 @@ export function BookingClientWrapper({ calcomLink, tallyUrl }: BookingClientProp
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className={styles.portalContainer}>
-            {/* Step 1: Interactive Concierge Slot Chooser */}
+            {/* Step 1: Interactive Priority Slot Chooser */}
             <motion.div 
               className={styles.bookingCard}
               initial={{ opacity: 0, x: -20 }}
@@ -165,7 +165,7 @@ export function BookingClientWrapper({ calcomLink, tallyUrl }: BookingClientProp
                 </div>
                 <div>
                   <h2 className={styles.cardTitle}>Step 1: Choose Your Slot</h2>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--primary)', fontWeight: 600 }}>Real-time Concierge Sync</span>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--primary)', fontWeight: 600 }}>Real-time Calendar Sync</span>
                 </div>
               </div>
               <p className={styles.cardDesc}>
@@ -451,7 +451,7 @@ export function BookingClientWrapper({ calcomLink, tallyUrl }: BookingClientProp
                         style={{ background: '#25d366', justifyContent: 'center' }}
                       >
                         <MessageCircle size={16} />
-                        <span>Open WhatsApp Concierge</span>
+                        <span>Open WhatsApp Care Desk</span>
                       </a>
                       <button 
                         type="button" 
@@ -468,11 +468,11 @@ export function BookingClientWrapper({ calcomLink, tallyUrl }: BookingClientProp
             </motion.div>
           </div>
 
-          {/* Concierge Assistance Card */}
+          {/* Direct Clinical Assistance Card */}
           <div style={{ marginTop: '3.5rem', background: 'var(--surface-white)', border: '1px solid var(--border-subtle)', borderRadius: '1.75rem', padding: '2rem 2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem', boxShadow: 'var(--shadow-sm)' }}>
             <div>
-              <h4 style={{ fontSize: '1.2rem', marginBottom: '0.35rem' }}>Prefer Direct Concierge Assistance?</h4>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.925rem' }}>Our dedicated patient concierge is available to assist with treatment inquiries, overseas travel coordination, or emergency priority scheduling.</p>
+              <h4 style={{ fontSize: '1.2rem', marginBottom: '0.35rem' }}>Prefer Direct Patient Care Assistance?</h4>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.925rem' }}>Our dedicated patient care team is available to assist with treatment inquiries, overseas travel coordination, or emergency priority scheduling.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
               <a href="tel:+922135874621" className="btn-secondary">
@@ -481,7 +481,7 @@ export function BookingClientWrapper({ calcomLink, tallyUrl }: BookingClientProp
               </a>
               <a href="https://wa.me/923005864621" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ background: '#25d366' }}>
                 <MessageCircle size={16} />
-                <span>WhatsApp Concierge</span>
+                <span>WhatsApp Care Desk</span>
               </a>
             </div>
           </div>

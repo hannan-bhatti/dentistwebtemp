@@ -177,6 +177,6 @@ export const faqData = [
   },
   {
     question: "Do you offer emergency dental consultations for acute tooth pain or trauma?",
-    answer: "Yes. We reserve daily priority emergency slots for acute toothaches, fractured restorations, or facial dental injuries across Karachi and Lahore. Please reach our direct concierge or WhatsApp line at +92 300 5864621 for immediate same-day prioritization."
+    answer: "Yes. We reserve daily priority emergency slots for acute toothaches, fractured restorations, or facial dental injuries across Karachi and Lahore. Please reach our direct patient care desk or WhatsApp line at +92 300 5864621 for immediate same-day prioritization."
   }
 ];

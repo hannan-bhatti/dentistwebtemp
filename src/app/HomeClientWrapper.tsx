@@ -704,7 +704,7 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
         </div>
       </section>
 
-      {/* 10. FLOATING VIP CONCIERGE WIDGET */}
+      {/* 10. FLOATING PATIENT CARE DESK */}
       <FloatingConcierge />
     </>
   );

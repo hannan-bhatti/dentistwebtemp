@@ -13,7 +13,7 @@ export default function BookingPage() {
   return (
     <Suspense fallback={
       <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <p style={{ color: 'var(--text-muted)' }}>Loading booking concierge...</p>
+        <p style={{ color: 'var(--text-muted)' }}>Loading booking calendar...</p>
       </div>
     }>
       <BookingClientWrapper 
