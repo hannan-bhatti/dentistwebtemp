@@ -48,17 +48,18 @@ export function LuminaLogoMark({ size = 32 }: { size?: number }) {
   );
 }
 
-export function LuminaLogo() {
+export function LuminaLogo({ variant = 'default' }: { variant?: 'default' | 'light' }) {
+  const isLight = variant === 'light';
   return (
-    <div className="brand-logo">
+    <div className={`brand-logo ${isLight ? 'brand-logo-light' : ''}`}>
       <div className="logo-icon-wrap">
         <LuminaLogoMark size={28} />
       </div>
       <div className="logo-text-wrap">
-        <div className="logo-brand-name">
+        <div className={`logo-brand-name ${isLight ? 'logo-name-light' : ''}`}>
           LUMINA <span>STUDIO</span>
         </div>
-        <div className="logo-brand-sub">Modern Dental Aesthetics</div>
+        <div className={`logo-brand-sub ${isLight ? 'logo-sub-light' : ''}`}>Modern Dental Aesthetics</div>
       </div>
     </div>
   );

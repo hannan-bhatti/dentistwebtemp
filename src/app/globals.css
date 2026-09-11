@@ -291,6 +291,30 @@ button {
   white-space: nowrap;
 }
 
+/* Light Logo for Dark Footers / Backgrounds */
+.logo-name-light,
+.site-footer .logo-brand-name {
+  color: #ffffff !important;
+}
+
+.logo-name-light span,
+.site-footer .logo-brand-name span {
+  color: #38bdf8 !important;
+  text-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+}
+
+.logo-sub-light,
+.site-footer .logo-brand-sub {
+  color: #cbd5e1 !important;
+}
+
+.brand-logo-light .logo-icon-wrap,
+.site-footer .logo-icon-wrap {
+  background: #ffffff !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.2) !important;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -342,10 +366,10 @@ button {
 
 /* Luxury Footer */
 .site-footer {
-  background-color: #071922;
-  color: #94a3b8;
+  background: linear-gradient(180deg, #071f2c 0%, #030d14 100%);
+  color: #cbd5e1;
   padding: 5.5rem 0 2.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(56, 189, 248, 0.15);
 }
 
 .footer-grid {

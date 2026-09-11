@@ -68,7 +68,7 @@ export default function RootLayout({
             <div className="footer-grid">
               <div>
                 <Link href="/" style={{ display: 'inline-block', marginBottom: '1.25rem' }}>
-                  <LuminaLogo />
+                  <LuminaLogo variant="light" />
                 </Link>
                 <p style={{ maxWidth: '340px', lineHeight: '1.7', marginBottom: '1.5rem', fontSize: '0.925rem' }}>
                   Pakistan&apos;s premier boutique cosmetic and reconstructive dental lounge. Redefining the patient journey through soothing wellness, hospital-grade German sterilization, and virtually painless British-accredited care.
