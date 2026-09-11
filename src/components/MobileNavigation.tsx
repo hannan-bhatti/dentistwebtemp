@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, 
@@ -93,9 +94,20 @@ export function MobileNavigation() {
             >
               {/* Drawer Header */}
               <div className={styles.drawerHeader}>
-                <div>
-                  <div className={styles.brandTitle}>LUMINA <span>STUDIO</span></div>
-                  <div className={styles.brandSub}>Clifton, Karachi &amp; Gulberg, Lahore</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <div style={{ width: 42, height: 42, borderRadius: 10, overflow: 'hidden', border: '1px solid var(--border-subtle)', background: '#ffffff', flexShrink: 0 }}>
+                    <Image 
+                      src="/images/lumina-logo.jpg" 
+                      alt="Lumina Dental Studio" 
+                      width={42} 
+                      height={42} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  </div>
+                  <div>
+                    <div className={styles.brandTitle}>LUMINA <span>STUDIO</span></div>
+                    <div className={styles.brandSub}>Clifton, Karachi &amp; Gulberg, Lahore</div>
+                  </div>
                 </div>
                 <button 
                   className={styles.drawerCloseBtn}

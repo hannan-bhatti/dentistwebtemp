@@ -251,16 +251,24 @@ button {
 }
 
 .logo-icon-wrap {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+  background: #ffffff;
   border: 1px solid rgba(14, 116, 144, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(14, 116, 144, 0.1);
+  box-shadow: 0 4px 12px rgba(14, 116, 144, 0.1);
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.brand-logo-official-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .logo-text-wrap {
