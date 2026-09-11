@@ -173,7 +173,7 @@ export const faqData = [
   },
   {
     question: "I am an Overseas Pakistani visiting for a short trip. Can you complete my smile makeover in time?",
-    answer: "Yes! A significant portion of our aesthetic clientele visits us from the UK, UAE, USA, and Canada. We offer accelerated VIP Treatment Windows. By utilizing German 3D intraoral optical scanning and our in-house master ceramists, full custom porcelain veneer transformations and single-visit restorations are completed flawlessly within 5 to 7 days."
+    answer: "Yes! A significant portion of our aesthetic clientele visits us from the UK, UAE, USA, and Canada. We offer accelerated Priority Treatment Windows. By utilizing German 3D intraoral optical scanning and our in-house master ceramists, full custom porcelain veneer transformations and single-visit restorations are completed flawlessly within 5 to 7 days."
   },
   {
     question: "Do you offer emergency dental consultations for acute tooth pain or trauma?",

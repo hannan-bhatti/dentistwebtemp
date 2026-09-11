@@ -673,7 +673,7 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
         </div>
       </section>
 
-      {/* 9. VIP CALL TO ACTION BANNER */}
+      {/* 9. RESERVED APPOINTMENTS BANNER */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <motion.div 

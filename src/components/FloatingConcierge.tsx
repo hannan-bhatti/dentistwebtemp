@@ -24,7 +24,7 @@ export function FloatingConcierge() {
               <div className={styles.avatarGroup}>
                 <div className={styles.statusDot}></div>
                 <div>
-                  <div className={styles.cardTitle}>VIP Patient Care Desk</div>
+                  <div className={styles.cardTitle}>Patient Care Desk</div>
                   <div className={styles.cardSubtitle}>Clifton, Karachi &amp; Gulberg, Lahore</div>
                 </div>
               </div>

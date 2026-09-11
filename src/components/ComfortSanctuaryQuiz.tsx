@@ -48,7 +48,7 @@ export function ComfortSanctuaryQuiz() {
         </div>
         <h3 className={styles.title}>Design Your Zero-Fear Dental Visit</h3>
         <p className={styles.subtitle}>
-          Lifelong dental anxiety stops at Lumina. Answer 2 quick questions to generate your customized VIP Calm Passport.
+          Lifelong dental anxiety stops at Lumina. Answer 2 quick questions to generate your customized Calm Comfort Passport.
         </p>
 
         {step < 3 && (
@@ -182,7 +182,7 @@ export function ComfortSanctuaryQuiz() {
                 className={styles.nextBtn}
                 onClick={() => setStep(3)}
               >
-                <span>Generate My VIP Calm Passport</span>
+                <span>Generate My Calm Comfort Passport</span>
                 <Sparkles size={16} />
               </button>
             </div>
@@ -203,7 +203,7 @@ export function ComfortSanctuaryQuiz() {
                   <ShieldCheck size={28} />
                 </div>
                 <div>
-                  <div className={styles.passportTitle}>Lumina VIP Calm Passport</div>
+                  <div className={styles.passportTitle}>Lumina Calm Comfort Passport</div>
                   <div className={styles.passportSub}>Registered to Clifton & Gulberg Studios</div>
                 </div>
               </div>
@@ -247,7 +247,7 @@ export function ComfortSanctuaryQuiz() {
               </a>
 
               <a 
-                href={`https://wa.me/923005864621?text=${encodeURIComponent(`Hi Lumina Studio, I created my VIP Calm Passport. My primary concern is: ${anxietyTrigger}. I would like to request ${selectedAmenities.join(', ')} for my visit.`)}`}
+                href={`https://wa.me/923005864621?text=${encodeURIComponent(`Hi Lumina Studio, I created my Calm Comfort Passport. My primary concern is: ${anxietyTrigger}. I would like to request ${selectedAmenities.join(', ')} for my visit.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.whatsappAction}
