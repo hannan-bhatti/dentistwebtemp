@@ -21,7 +21,8 @@ import {
   ChevronDown, 
   MessageCircle,
   Award,
-  Zap
+  Zap,
+  Phone
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -183,9 +184,9 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
                 value={selectedDoctor}
                 onChange={(e) => setSelectedDoctor(e.target.value)}
               >
-                <option value="any">First Available Specialist</option>
-                <option value="dr-elena">Dr. Elena Smith (Cosmetic Lead)</option>
-                <option value="dr-marcus">Dr. Marcus Jones (Surgery/Implants)</option>
+                <option value="any">First Available Clinical Specialist</option>
+                <option value="dr-elena">Dr. Ayesha Siddiqui (Cosmetic & Veneers)</option>
+                <option value="dr-marcus">Prof. Dr. Farhan Alvi (Guided Implants & Surgery)</option>
               </select>
             </div>
 
@@ -546,20 +547,22 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <span className="section-tag" style={{ background: 'rgba(255,255,255,0.15)', color: '#ffffff', borderColor: 'rgba(255,255,255,0.2)' }}>
+            <span className={styles.vipCtaBadge}>
+              <Sparkles size={14} color="#38bdf8" />
               Reserved Appointments
             </span>
             <h2 className={styles.vipCtaTitle}>Experience Dental Care as It Should Be.</h2>
             <p className={styles.vipCtaSub}>
-              Schedule your comprehensive consultation or cosmetic smile design session today with our boutique Miami Beach team.
+              Schedule your comprehensive consultation or custom smile design session today with Pakistan&apos;s leading aesthetic clinical team in Clifton, Karachi and Gulberg, Lahore.
             </p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
-              <Link href="/booking" className="btn-primary" style={{ background: '#ffffff', color: 'var(--primary-dark)', padding: '1rem 2.25rem', fontSize: '1rem' }}>
+            <div className={styles.vipCtaActions}>
+              <Link href="/booking" className={styles.vipBtnPrimary}>
                 <Calendar size={18} />
-                <span>Book Appointment Online</span>
+                <span>Reserve Appointment Online</span>
               </Link>
-              <a href="tel:8005864621" className="btn-secondary" style={{ background: 'transparent', color: '#ffffff', borderColor: 'rgba(255,255,255,0.4)', padding: '1rem 2.25rem', fontSize: '1rem' }}>
-                <span>Call (800) 586-4621</span>
+              <a href="tel:+922135874621" className={styles.vipBtnSecondary}>
+                <Phone size={17} />
+                <span>Call (021) 3587-4621</span>
               </a>
             </div>
           </motion.div>

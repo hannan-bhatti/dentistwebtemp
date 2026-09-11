@@ -104,7 +104,7 @@ export function ServicesClientWrapper({ servicesData }: any) {
             <span className="section-tag">Personalized Treatment Plans</span>
             <h3 style={{ fontSize: '2.25rem', marginBottom: '1rem' }}>Unsure Which Treatment Fits Your Goals?</h3>
             <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto 2rem', lineHeight: '1.7' }}>
-              Schedule a comprehensive 3D Smile Consultation with Dr. Elena or Dr. Marcus. We’ll capture digital intraoral scans and review tailored options together.
+              Schedule a comprehensive 3D Smile Consultation with Dr. Ayesha or Prof. Dr. Farhan. We’ll capture digital German intraoral scans and review tailored clinical options together.
             </p>
             <Link href="/booking" className="btn-primary" style={{ padding: '0.95rem 2.25rem' }}>
               <span>Book Comprehensive Consultation</span>

@@ -1,14 +1,14 @@
 .bookingHero {
   background: radial-gradient(100% 70% at 50% 0%, rgba(14, 116, 144, 0.08) 0%, rgba(251, 252, 253, 0) 100%);
-  padding: 5rem 0 3rem;
+  padding: 4.5rem 0 2.5rem;
   text-align: center;
 }
 
 .portalContainer {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  gap: 3rem;
-  margin-top: 2rem;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 .stepBar {
@@ -47,6 +47,8 @@
   border-radius: 2rem;
   padding: 2.5rem;
   box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
 }
 
 .cardHeader {
@@ -65,26 +67,359 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .cardTitle {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 800;
+  color: var(--text-heading);
 }
 
 .cardDesc {
   color: var(--text-muted);
   font-size: 0.925rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
   line-height: 1.6;
 }
 
-.embedContainer {
+/* Interactive Slot Chooser Styles */
+.schedulerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fieldLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-heading);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.customSelect {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-subtle);
   background-color: var(--bg-subtle);
-  border-radius: 1.25rem;
-  overflow: hidden;
+  color: var(--text-heading);
+  font-size: 0.925rem;
+  font-weight: 600;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.customSelect:focus {
+  border-color: var(--primary);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.12);
+}
+
+/* Date Strip */
+.dateStrip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.65rem;
+}
+
+.datePill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+  border-radius: 14px;
+  border: 1.5px solid var(--border-subtle);
+  background: var(--bg-subtle);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.datePill:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.datePillActive {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(14, 116, 144, 0.25);
+}
+
+.datePillActive .dateDay,
+.datePillActive .dateNum,
+.datePillActive .dateMonth {
+  color: #ffffff;
+}
+
+.dateDay {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.dateNum {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin: 0.15rem 0;
+}
+
+.dateMonth {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Slot Grid */
+.slotsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.slotPeriodTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+.slotGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.slotBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.7rem 0.5rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-subtle);
+  background: #ffffff;
+  color: var(--text-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.slotBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+.slotBtnActive {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(14, 116, 144, 0.25);
+}
+
+/* Summary Card in Step 1 */
+.selectedSummary {
+  background: var(--primary-light);
+  border: 1px solid rgba(14, 116, 144, 0.2);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.summaryText {
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryDoc {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.summaryTime {
+  font-size: 0.825rem;
+  color: var(--text-body);
+}
+
+/* Intake Form Styles (Step 2) */
+.intakeForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formInput, .formTextarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-subtle);
+  background-color: var(--bg-subtle);
+  color: var(--text-heading);
+  font-size: 0.925rem;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.formInput:focus, .formTextarea:focus {
+  border-color: var(--primary);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.12);
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.tagPillContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tagPill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  border: 1.5px solid var(--border-subtle);
+  background: var(--bg-subtle);
+  color: var(--text-body);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tagPillActive {
+  background: var(--accent-emerald);
+  border-color: var(--accent-emerald);
+  color: #ffffff;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 20px rgba(14, 116, 144, 0.25);
+  transition: all 0.25s ease;
+  font-family: inherit;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(14, 116, 144, 0.35);
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary) 100%);
+}
+
+/* Confirmation Card */
+.confirmationContainer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.confirmIconBox {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: var(--accent-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+}
+
+.confirmTitle {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 0.5rem;
+}
+
+.confirmSub {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  max-width: 380px;
+  margin-bottom: 1.75rem;
+  line-height: 1.6;
+}
+
+.confirmDetailCard {
+  background: var(--bg-subtle);
   border: 1px solid var(--border-subtle);
-  min-height: 520px;
+  border-radius: 16px;
+  padding: 1.25rem;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.confirmDetailRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.confirmDetailRow span:first-child {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.confirmDetailRow span:last-child {
+  color: var(--text-heading);
+  font-weight: 700;
+}
+
+.confirmActions {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  flex-direction: column;
 }
 
 @media (max-width: 960px) {
@@ -95,5 +430,11 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
+  }
+  .dateStrip {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .twoCol {
+    grid-template-columns: 1fr;
   }
 }

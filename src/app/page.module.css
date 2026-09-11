@@ -594,27 +594,111 @@
 
 /* VIP CTA Banner */
 .vipCtaBanner {
-  background: linear-gradient(135deg, #072533 0%, #0e5b72 100%);
+  background: radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.28) 0%, transparent 45%), 
+              radial-gradient(circle at 85% 80%, rgba(20, 184, 166, 0.25) 0%, transparent 50%), 
+              linear-gradient(135deg, #083344 0%, #0e7490 55%, #0369a1 100%);
   border-radius: 2.5rem;
   padding: 5rem 3rem;
   text-align: center;
   color: #ffffff;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(14, 116, 144, 0.35);
+  box-shadow: 0 25px 50px -12px rgba(14, 116, 144, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+}
+
+.vipCtaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-size: 0.825rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.45rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 2;
 }
 
 .vipCtaTitle {
   font-size: 3rem;
+  font-weight: 800;
   color: #ffffff;
   margin-bottom: 1.25rem;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  position: relative;
+  z-index: 2;
 }
 
 .vipCtaSub {
   font-size: 1.2rem;
-  color: #cbe7f0;
-  max-width: 600px;
+  color: #e0f2fe;
+  max-width: 620px;
   margin: 0 auto 2.5rem;
+  line-height: 1.65;
+  position: relative;
+  z-index: 2;
+}
+
+.vipCtaActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.vipBtnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #ffffff;
+  color: #0e7490;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 2.25rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+.vipBtnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -4px rgba(0, 0, 0, 0.28);
+  background: #f0fdfa;
+  color: #0891b2;
+}
+
+.vipBtnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1rem 2.25rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.vipBtnSecondary:hover {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: #ffffff;
+  transform: translateY(-2px);
 }
 
 /* Responsive */
