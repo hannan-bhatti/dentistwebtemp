@@ -31,6 +31,8 @@ import { BeforeAfterSlider } from '@/components/BeforeAfterSlider';
 import { SmileCalculator } from '@/components/SmileCalculator';
 import { ComfortSanctuaryQuiz } from '@/components/ComfortSanctuaryQuiz';
 import { TiltCard } from '@/components/TiltCard';
+import { SoundscapePlayer } from '@/components/SoundscapePlayer';
+import { FloatingConcierge } from '@/components/FloatingConcierge';
 
 const iconServiceMap: Record<string, React.ReactNode> = {
   'cosmetic-veneers': <Smile size={28} />,
@@ -78,9 +80,54 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
                 <span>{heroData.badge || "✨ Accepting New Patients • Same-Day Emergencies"}</span>
               </div>
 
-              <h1 className={styles.heroHeadline}>
-                Dentistry Redefined for <span className={styles.heroHeadlineGradient}>Calm, Confident</span> Smiles.
-              </h1>
+              <motion.h1 
+                className={styles.heroHeadline}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <motion.span 
+                  initial={{ opacity: 0, y: 22 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  style={{ display: 'inline-block', marginRight: '0.28em' }}
+                >
+                  Dentistry
+                </motion.span>
+                <motion.span 
+                  initial={{ opacity: 0, y: 22 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.18 }}
+                  style={{ display: 'inline-block', marginRight: '0.28em' }}
+                >
+                  Redefined
+                </motion.span>
+                <motion.span 
+                  initial={{ opacity: 0, y: 22 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.26 }}
+                  style={{ display: 'inline-block', marginRight: '0.28em' }}
+                >
+                  for
+                </motion.span>
+                <motion.span 
+                  initial={{ opacity: 0, y: 22, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.34 }}
+                  className={styles.heroHeadlineGradient} 
+                  style={{ display: 'inline-block', marginRight: '0.28em' }}
+                >
+                  Calm, Confident
+                </motion.span>
+                <motion.span 
+                  initial={{ opacity: 0, y: 22 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.42 }}
+                  style={{ display: 'inline-block' }}
+                >
+                  Smiles.
+                </motion.span>
+              </motion.h1>
 
               <p className={styles.heroSubheadline}>
                 {heroData.subheadline}
@@ -115,15 +162,49 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
               transition={{ duration: 0.7, delay: 0.15 }}
             >
               {/* Floating Top Card */}
-              <div className={styles.floatingCardTop}>
-                <div className={styles.floatingCardIcon}>
-                  <Clock size={20} />
-                </div>
-                <div>
-                  <div className={styles.floatingCardTitle}>Next Opening Today</div>
-                  <div className={styles.floatingCardSub}>2:30 PM • Dr. Ayesha Siddiqui</div>
-                </div>
-              </div>
+              <motion.div 
+                className={styles.floatingCardTop}
+                initial={{ opacity: 0, x: -25 }}
+                animate={{ 
+                  opacity: 1, 
+                  x: 0,
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  y: {
+                    repeat: Infinity,
+                    duration: 4.5,
+                    ease: "easeInOut",
+                  },
+                  opacity: { duration: 0.6, delay: 0.2 },
+                  x: { duration: 0.6, delay: 0.2 },
+                }}
+                whileHover={{ 
+                  scale: 1.06, 
+                  y: -14,
+                  boxShadow: "0 22px 45px -8px rgba(14, 116, 144, 0.32)",
+                  borderColor: "rgba(14, 116, 144, 0.35)",
+                }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <Link href="/booking" className={styles.floatingCardInnerLink}>
+                  <motion.div 
+                    className={styles.floatingCardIcon}
+                    whileHover={{ rotate: [0, -12, 12, 0], scale: 1.12 }}
+                    transition={{ duration: 0.35 }}
+                  >
+                    <Clock size={20} />
+                  </motion.div>
+                  <div>
+                    <div className={styles.floatingCardTitle}>
+                      Next Opening Today
+                      <span className={styles.liveIndicatorDot}></span>
+                    </div>
+                    <div className={styles.floatingCardSub}>2:30 PM • Dr. Ayesha Siddiqui</div>
+                  </div>
+                  <ArrowRight size={15} className={styles.floatingCardArrow} />
+                </Link>
+              </motion.div>
 
               {/* Main Clinic Photography */}
               <div className={styles.heroImageFrame}>
@@ -138,15 +219,51 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
               </div>
 
               {/* Floating Bottom Card */}
-              <div className={styles.floatingCardBottom}>
-                <div className={styles.floatingCardIcon} style={{ background: '#ecfdf5', color: '#059669' }}>
-                  <Award size={20} />
-                </div>
-                <div>
-                  <div className={styles.floatingCardTitle}>99.4% Pain-Free Score</div>
-                  <div className={styles.floatingCardSub}>Gentle Wand™ Micro-Anesthesia</div>
-                </div>
-              </div>
+              <motion.div 
+                className={styles.floatingCardBottom}
+                initial={{ opacity: 0, x: 25 }}
+                animate={{ 
+                  opacity: 1, 
+                  x: 0,
+                  y: [0, 10, 0],
+                }}
+                transition={{
+                  y: {
+                    repeat: Infinity,
+                    duration: 5.2,
+                    ease: "easeInOut",
+                    delay: 0.8,
+                  },
+                  opacity: { duration: 0.6, delay: 0.35 },
+                  x: { duration: 0.6, delay: 0.35 },
+                }}
+                whileHover={{ 
+                  scale: 1.06, 
+                  y: 5,
+                  boxShadow: "0 22px 45px -8px rgba(5, 150, 105, 0.32)",
+                  borderColor: "rgba(5, 150, 105, 0.35)",
+                }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <a href="#experience" className={styles.floatingCardInnerLink}>
+                  <motion.div 
+                    className={styles.floatingCardIcon} 
+                    style={{ background: '#ecfdf5', color: '#059669' }}
+                    whileHover={{ scale: 1.12, rotate: 10 }}
+                    transition={{ duration: 0.35 }}
+                  >
+                    <Award size={20} />
+                  </motion.div>
+                  <div>
+                    <div className={styles.floatingCardTitle}>
+                      99.4% Pain-Free Score
+                      <Sparkles size={13} style={{ display: 'inline', marginLeft: 4, color: '#059669' }} />
+                    </div>
+                    <div className={styles.floatingCardSub}>Gentle Wand™ Micro-Anesthesia</div>
+                  </div>
+                  <ArrowRight size={15} className={styles.floatingCardArrow} />
+                </a>
+              </motion.div>
             </motion.div>
 
           </div>
@@ -319,6 +436,9 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
               </motion.div>
             ))}
           </div>
+
+          {/* Interactive Calm Lounge Soundscape Player */}
+          <SoundscapePlayer />
 
           {/* Tech Bar */}
           <div style={{ marginTop: '4rem', background: 'var(--bg-subtle)', borderRadius: '1.75rem', padding: '3rem 2.5rem', border: '1px solid var(--border-subtle)' }}>
@@ -580,6 +700,9 @@ export function HomeClientWrapper({ heroData, trustSignals, servicesData, doctor
           </motion.div>
         </div>
       </section>
+
+      {/* 10. FLOATING VIP CONCIERGE WIDGET */}
+      <FloatingConcierge />
     </>
   );
 }

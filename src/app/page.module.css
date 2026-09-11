@@ -57,10 +57,25 @@
   margin-bottom: 1.5rem;
 }
 
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .heroHeadlineGradient {
-  background: linear-gradient(135deg, var(--primary) 0%, #0891b2 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, #06b6d4 35%, #0e7490 70%, #0284c7 100%);
+  background-size: 250% auto;
+  animation: gradientFlow 5s ease-in-out infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 .heroSubheadline {
@@ -117,34 +132,81 @@
   position: absolute;
   top: 1.5rem;
   left: -1.75rem;
-  background: var(--surface-glass);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  padding: 1rem 1.25rem;
+  padding: 0.9rem 1.25rem;
   border-radius: 1.25rem;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-glass);
+  box-shadow: 0 15px 35px -5px rgba(14, 116, 144, 0.15), 0 0 0 1px rgba(14, 116, 144, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   gap: 0.85rem;
   z-index: 5;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  user-select: none;
 }
 
 .floatingCardBottom {
   position: absolute;
   bottom: 2rem;
   right: -1.5rem;
-  background: var(--surface-glass);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  padding: 1rem 1.35rem;
+  padding: 0.9rem 1.35rem;
   border-radius: 1.25rem;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-glass);
+  box-shadow: 0 15px 35px -5px rgba(5, 150, 105, 0.15), 0 0 0 1px rgba(5, 150, 105, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   gap: 0.85rem;
   z-index: 5;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  user-select: none;
+}
+
+.floatingCardInnerLink {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.floatingCardArrow {
+  margin-left: 0.5rem;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.floatingCardTop:hover .floatingCardArrow,
+.floatingCardBottom:hover .floatingCardArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.liveIndicatorDot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10b981;
+  margin-left: 0.5rem;
+  animation: pulseBeacon 2s infinite;
+  vertical-align: middle;
+}
+
+@keyframes pulseBeacon {
+  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.15); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
 .floatingCardIcon {

@@ -1,0 +1,132 @@
+.playerCard {
+  background: linear-gradient(135deg, rgba(240, 253, 250, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border: 1px solid rgba(14, 116, 144, 0.18);
+  border-radius: 1.5rem;
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: 0 12px 30px -8px rgba(14, 116, 144, 0.08);
+  margin-top: 2rem;
+  backdrop-filter: blur(12px);
+}
+
+.leftMeta {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  flex: 1;
+}
+
+.iconCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(14, 116, 144, 0.15);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.playerTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.activeTag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  background: rgba(14, 116, 144, 0.12);
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.playerDesc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.controlsRow {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.waveVisualizer {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 28px;
+  width: 48px;
+  justify-content: center;
+}
+
+.waveBar {
+  width: 3px;
+  background: var(--primary);
+  border-radius: 3px;
+  min-height: 4px;
+}
+
+.playBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background: #ffffff;
+  border: 1.5px solid rgba(14, 116, 144, 0.25);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.playBtn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.playBtn.isPlaying {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .playerCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .controlsRow {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+  .playBtn {
+    flex: 1;
+    justify-content: center;
+  }
+}
